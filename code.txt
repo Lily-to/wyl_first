@@ -1,11 +1,12 @@
-###Beysian A/B testing
+###Bayesian A/B testing
 #data(basedata)
 library(readxl)
 data1 <- read_excel("F:/R data/basedata.xlsx",sheet = 4)
 data2 <- read_excel("F:/R data/basedata.xlsx",sheet = 5)
 data3 <- read_excel("F:/R data/basedata.xlsx",sheet = 6)
 
-#实验二
+###bayesAB
+library("bayesAB")
 AC1 <- bayesTest(data1$R1,data2$R1,
                   priors = c('alpha' = 1, 'beta' = 1), 
                   distribution = 'bernoulli')
